@@ -5,6 +5,8 @@ import { LogOut } from "lucide-react";
 import { isAuthenticated, logout } from "@/lib/auth";
 import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
+import Image from "next/image";
+import Logo from "@/assets/workflow.svg";
 
 const Navbar = () => {
   const router = useRouter();
@@ -20,8 +22,11 @@ const Navbar = () => {
   return (
     <header className="w-full text-white bg-[#1d1d1d] backdrop-blur-sm shadow sticky top-0 z-20">
       <nav className="max-w-[1440px] mx-auto p-4 flex justify-between items-center gap-2">
-        <Link href={"/"}>
-          <h3 className="font-roboto font-bold text-3xl">FixFlow</h3>
+        <Link href={"/"} className="flex items-center gap-2">
+          <Image src={Logo} width={24} height={24} alt="FixFlow Logo" />
+          <h3 className="font-roboto font-bold text-3xl max-md:hidden">
+            FixFlow
+          </h3>
         </Link>
         {authenticated ? (
           <div className="flex items-center gap-4">

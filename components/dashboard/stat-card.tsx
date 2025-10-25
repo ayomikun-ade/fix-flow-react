@@ -20,8 +20,8 @@ const StatCard = ({ title, value, icon: Icon, description }: StatCardProps) => {
             <p className="text-xs text-muted-foreground mt-2">{description}</p>
           )}
         </div>
-        <div className="w-12 h-12 rounded-lg gradient-hero flex items-center justify-center">
-          <Icon className="h-6 w-6 text-primary-foreground" />
+        <div className="w-8 h-8 rounded-lg bg-[#1d1d1d] flex items-center justify-center">
+          <Icon className="h-4 w-4 text-primary-foreground" />
         </div>
       </div>
     </div>

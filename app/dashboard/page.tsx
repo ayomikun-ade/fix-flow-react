@@ -41,10 +41,10 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col max-w-[1440px] mx-auto px-4">
-      <main className="flex-1 bg-muted/30">
+      <main className="flex-1 ">
         <div className="container-app py-12">
           <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">
+            <h1 className="text-3xl md:text-4xl font-roboto font-bold mb-2">
               Welcome back, {session?.user.name}!
             </h1>
             <p className="text-muted-foreground">
