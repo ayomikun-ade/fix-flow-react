@@ -18,7 +18,7 @@ const Navbar = () => {
     router.refresh();
   };
   return (
-    <header className="w-full text-white bg-[#1d1d1d] backdrop-blur-sm sticky top-0 z-20">
+    <header className="w-full text-white bg-[#1d1d1d] backdrop-blur-sm shadow sticky top-0 z-20">
       <nav className="max-w-[1440px] mx-auto p-4 flex justify-between items-center gap-2">
         <Link href={"/"}>
           <h3 className="font-roboto font-bold text-3xl">FixFlow</h3>
