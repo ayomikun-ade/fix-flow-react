@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Wavy from "@/assets/wave.svg";
 import WavyTop from "@/assets/wave-top.svg";
+import Circle from "@/assets/circle.svg";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -25,6 +26,14 @@ const Hero = () => {
           aria-hidden="true"
         />
       </figure>
+      <figure className="absolute inset-0 -z-10">
+        <Image
+          src={Circle}
+          alt="Wavy background"
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+      </figure>
       <div className="max-w-[700px] z-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 shadow-sm">
           <span className="text-sm font-medium">Streamline Your Workflow</span>
@@ -44,7 +53,7 @@ const Hero = () => {
             Get Started <ArrowRight />
           </Button>
         </Link>
-        <Button className="mt-6" variant={"outline"}>
+        <Button className="mt-6" variant={"outline"} asChild>
           <Link href={"/auth/login"}>Log In</Link>
         </Button>
       </div>

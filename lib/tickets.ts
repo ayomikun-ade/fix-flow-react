@@ -4,52 +4,46 @@ const TICKETS_KEY = "ticketapp_tickets";
 
 // Initialize with demo tickets
 const initializeDemoTickets = () => {
+  if (typeof window === 'undefined') return;
+
   const tickets = localStorage.getItem(TICKETS_KEY);
   if (!tickets) {
     const demoTickets: Ticket[] = [
       {
         id: "1",
-        title: "Fix login page styling",
+        title: "Create a FixFlow Account",
         description:
-          "The login button is not aligned properly on mobile devices",
-        status: "open",
+          "A FixFlow account needs to be created to access the ticketing system",
+        status: "closed",
         priority: "high",
         createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
         updatedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
       },
       {
         id: "2",
-        title: "Implement dark mode",
-        description: "Add dark mode support across all pages",
-        status: "in_progress",
+        title: "Create my first ticket",
+        description: "Create a ticket to track an issue or task",
+        status: "open",
         priority: "medium",
         createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
         updatedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
-      },
-      {
-        id: "3",
-        title: "Update documentation",
-        description: "API documentation needs to be updated with new endpoints",
-        status: "closed",
-        priority: "low",
-        createdAt: new Date(
-          Date.now() - 10 * 24 * 60 * 60 * 1000
-        ).toISOString(),
-        updatedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
       },
     ];
     localStorage.setItem(TICKETS_KEY, JSON.stringify(demoTickets));
   }
 };
 
-initializeDemoTickets();
-
 export const getTickets = (): Ticket[] => {
+  if (typeof window === 'undefined') return [];
+
+  initializeDemoTickets();
   const tickets = localStorage.getItem(TICKETS_KEY);
   return tickets ? JSON.parse(tickets) : [];
 };
 
 const saveTickets = (tickets: Ticket[]) => {
+  if (typeof window === 'undefined') return;
+
   localStorage.setItem(TICKETS_KEY, JSON.stringify(tickets));
 };
 

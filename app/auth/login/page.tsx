@@ -22,12 +22,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { toast } from "sonner";
-import { Ticket, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import Wavy from "@/assets/wave.svg";
+import Circle from "@/assets/circle.svg";
+import Logo from "@/assets/workflow.png";
 
 const Login = () => {
   const router = useRouter();
@@ -63,12 +65,20 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-[80vh] items-center justify-center bg-muted/30 p-4">
+    <div className="flex min-h-[80vh] items-center justify-center p-4">
       <figure className="absolute bottom-0 left-0 right-0 z-0">
         <Image
           src={Wavy}
           alt="Wavy background"
           className="h-36 w-auto md:h-full md:w-full object-cover"
+          aria-hidden="true"
+        />
+      </figure>
+      <figure className="absolute inset-0 -z-10">
+        <Image
+          src={Circle}
+          alt="Wavy background"
+          className="h-full w-full object-cover max-md:object-right"
           aria-hidden="true"
         />
       </figure>
@@ -81,12 +91,16 @@ const Login = () => {
           Back to home
         </Link>
 
-        <Card className="shadow-lg">
+        <Card className="shadow-lg bg-white z-10">
+          <div className="w-40 h-40 rounded-full bg-[#f2f2f2] absolute -z-10 right-0 top-1/7" />
           <CardHeader className="text-center">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 rounded-lg gradient-hero flex items-center justify-center">
-                <Ticket className="h-6 w-6 text-primary-foreground" />
-              </div>
+              <Image
+                src={Logo}
+                alt="FixFlow Logo"
+                className="w-12 h-12"
+                aria-hidden="true"
+              />
             </div>
             <CardTitle className="text-2xl">Welcome Back</CardTitle>
             <CardDescription>
@@ -154,9 +168,9 @@ const Login = () => {
             </div>
 
             <div className="mt-4 p-3 bg-muted/50 rounded-lg text-xs text-muted-foreground">
-              <p className="font-medium mb-1">Demo credentials:</p>
-              <p>Email: demo@ticketapp.com</p>
-              <p>Password: demo123</p>
+              <p className="font-medium mb-1">Test credentials:</p>
+              <p>Email: test@example.com</p>
+              <p>Password: test123</p>
             </div>
           </CardContent>
         </Card>

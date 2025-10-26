@@ -30,6 +30,10 @@ import {
 import { Plus, Search } from "lucide-react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
+import { isAuthenticated } from "@/lib/auth";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Circle from "@/assets/circle.svg";
 
 const Tickets = () => {
   const [tickets, setTickets] = useState<Ticket[]>([]);
@@ -39,12 +43,19 @@ const Tickets = () => {
   const [editingTicket, setEditingTicket] = useState<Ticket | undefined>();
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const loadTickets = () => {
     const loadedTickets = getTickets();
     setTickets(loadedTickets);
     setFilteredTickets(loadedTickets);
   };
+
+  useEffect(() => {
+    if (!isAuthenticated()) {
+      router.push("/auth/login");
+    }
+  }, [router]);
 
   useEffect(() => {
     loadTickets();
@@ -133,6 +144,14 @@ const Tickets = () => {
 
   return (
     <div className="flex flex-col max-w-[1440px] mx-auto px-4">
+      <figure className="absolute inset-0 -z-10">
+        <Image
+          src={Circle}
+          alt="Wavy background"
+          className="h-full w-full object-cover max-md:object-right"
+          aria-hidden="true"
+        />
+      </figure>
       {/* <Navbar /> */}
       <main className="flex-1">
         <div className="container-app py-12">

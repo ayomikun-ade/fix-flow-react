@@ -1,8 +1,6 @@
 import {
   BarChart3,
   CheckCircle,
-  Clock,
-  Globe,
   Shield,
   Ticket,
   Users,
@@ -39,25 +37,11 @@ export const features = [
       "Enterprise-grade security with 99.9% uptime guarantee for your peace of mind.",
   },
   {
-    id: 5,
-    icon: Clock,
-    title: "24/7 Support",
-    description:
-      "Round-the-clock customer support to ensure your events run smoothly.",
-  },
-  {
     id: 6,
     icon: Zap,
     title: "Lightning Fast",
     description:
       "Optimized performance with instant ticket processing and real-time updates.",
-  },
-  {
-    id: 7,
-    icon: Globe,
-    title: "Global Reach",
-    description:
-      "Sell tickets worldwide with multi-currency support and international payment methods.",
   },
   {
     id: 8,

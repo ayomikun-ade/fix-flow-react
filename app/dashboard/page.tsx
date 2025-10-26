@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Ticket, CheckCircle, Clock, XCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Circle from "@/assets/circle.svg";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -41,6 +43,14 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col max-w-[1440px] mx-auto px-4">
+      <figure className="absolute inset-0 -z-10">
+        <Image
+          src={Circle}
+          alt="Wavy background"
+          className="h-full w-full object-cover max-md:object-right"
+          aria-hidden="true"
+        />
+      </figure>
       <main className="flex-1 ">
         <div className="container-app py-12">
           <div className="mb-8">

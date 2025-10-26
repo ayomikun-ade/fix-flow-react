@@ -11,26 +11,31 @@ interface StoredUser extends User {
 
 // Initialize with a demo user
 const initializeMockUsers = () => {
+  if (typeof window === 'undefined') return;
+
   const users = localStorage.getItem(MOCK_USERS_KEY);
   if (!users) {
     const demoUser: StoredUser = {
       id: "1",
-      email: "demo@ticketapp.com",
-      name: "Demo User",
-      password: "demo123",
+      email: "test@example.com",
+      name: "Test User",
+      password: "test123",
     };
     localStorage.setItem(MOCK_USERS_KEY, JSON.stringify([demoUser]));
   }
 };
 
-initializeMockUsers();
-
 const getMockUsers = (): StoredUser[] => {
+  if (typeof window === 'undefined') return [];
+
+  initializeMockUsers();
   const users = localStorage.getItem(MOCK_USERS_KEY);
   return users ? JSON.parse(users) : [];
 };
 
 const saveMockUsers = (users: StoredUser[]) => {
+  if (typeof window === 'undefined') return;
+
   localStorage.setItem(MOCK_USERS_KEY, JSON.stringify(users));
 };
 
@@ -59,7 +64,10 @@ export const login = async (
   };
 
   const session = { user: userWithoutPassword, token };
-  localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+  }
 
   return session;
 };
@@ -97,16 +105,23 @@ export const signup = async (
   };
 
   const session = { user: userWithoutPassword, token };
-  localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+  }
 
   return session;
 };
 
 export const logout = () => {
+  if (typeof window === 'undefined') return;
+
   localStorage.removeItem(SESSION_KEY);
 };
 
 export const getSession = (): { user: User; token: string } | null => {
+  if (typeof window === 'undefined') return null;
+
   const session = localStorage.getItem(SESSION_KEY);
   return session ? JSON.parse(session) : null;
 };
