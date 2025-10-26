@@ -1,7 +1,7 @@
 const stats = [
-  { value: "10K+", label: "Active Users" },
-  { value: "50K+", label: "Tickets Resolved" },
-  { value: "99.9%", label: "Uptime" },
+  { value: "100", label: "Active Users" },
+  { value: "1K", label: "Tickets Resolved" },
+  { value: "4.5", label: "Star Reviews" },
   { value: "24/7", label: "Support" },
 ];
 
