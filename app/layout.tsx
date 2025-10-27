@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "FixFlow",
+  title: "FixFlow - Ticket Management System",
   description: "Your go-to ticketing system for seamless issue resolution.",
 };
 
