@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="max-w-[1440px] mx-auto p-4 min-h-screen flex flex-col justify-center items-center text-center gap-6">
+    <section className="max-w-[1440px] mx-auto p-4 min-h-[calc(100vh-68px)] flex flex-col justify-center items-center text-center gap-6">
       <figure className="absolute top-16 md:top-0 left-0 right-0 z-0">
         <Image
           src={WavyTop}
