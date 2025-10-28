@@ -70,6 +70,7 @@ After logging in, you will be redirected to the dashboard.
 - The dashboard displays key metrics for your tickets, including the total number of tickets, open tickets, tickets in progress, and closed tickets.
 - A personalized welcome message will greet you.
 - A "Go to Tickets" button provides quick access to the ticket management page.
+- A bar chart for ticket analysis.
 
 ### Ticket Management
 

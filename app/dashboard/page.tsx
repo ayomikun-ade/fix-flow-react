@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Circle from "@/assets/circle.svg";
 import DashboardFooter from "@/components/dashboard/protected-footer";
+import { StatsChart } from "@/components/dashboard/chart";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -107,6 +108,7 @@ const Dashboard = () => {
                 </Link>
               </div>
             </div>
+            <StatsChart stats={stats} />
           </div>
         </main>
       </div>

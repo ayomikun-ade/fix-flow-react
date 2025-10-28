@@ -2,7 +2,7 @@ import React from "react";
 
 const DashboardFooter = () => {
   return (
-    <footer className="bg-[#1d1d1d] text-white py-3 md:py-6 px-4 mt-16 md:absolute bottom-0 w-full">
+    <footer className="bg-[#1d1d1d] text-white py-3 md:py-6 px-4 mt-16 w-full">
       <div className="max-w-container mx-auto">
         <div className="text-center text-sm text-neutral-400 flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="text-neutral-400 text-sm">
